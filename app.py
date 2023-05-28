@@ -5,18 +5,18 @@ app = Flask(__name__)
 app.secret_key = 'IT@JCUA0Zr98j/3yXa R~XHH!jmN]LWX/,?RT'
 
 
-@app.route('/')
+@app.route('/Home')
 def home():
     return render_template("Home.html", about_url=url_for('about'))
 
 
-@app.route('/about')
+@app.route('/Aboutus')
 def about():
     details = "The website is created for a Demo purpose."
     return render_template("Aboutus.html", details=details)
 
 
-@app.route('/search', methods=['POST', 'GET'])
+@app.route('/Search', methods=['POST', 'GET'])
 def search():
     if request.method == 'POST':
         session['search_term'] = request.form['search']
@@ -24,7 +24,7 @@ def search():
     return render_template("Search.html")
 
 
-@app.route('/results')
+@app.route('/Results')
 def results():
     search_term = session['search_term']
     page = get_page(search_term)
