@@ -1,0 +1,12 @@
+{% extends "Layouts.html" %}
+{% block title %} Results for the Wikipedia{% endblock %}
+{% block content %}
+{% if page %}
+
+  <h2> Summary </h2>
+    <p>{{ page.summary }}</p>
+    <p><a href="{{ page.url }}"> {{ page.title }}</a> </p>
+{% else %}
+  <h1>Error</h1>
+{% endif %}
+{% endblock %}
